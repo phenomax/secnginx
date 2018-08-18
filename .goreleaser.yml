@@ -1,0 +1,32 @@
+project_name: secnginx
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+  - binary: secnginx
+    goos:
+    - darwin
+    - linux
+    goarch:
+    - amd64
+    - 386
+    - arm
+    - arm64
+    goarm:
+    - 7
+    ignore:
+    - goos: darwin
+      goarch: 386
+
+archive:
+  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm
+    }}v{{ .Arm }}{{ end }}'
+  format: tar.gz
+  files:
+    - LICENSE
+    - README.md
+    - files/*
+    - nginx/**/*
+    - config.toml
+checksum:
+    name_template: 'checksums.txt'

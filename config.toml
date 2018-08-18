@@ -1,0 +1,68 @@
+# Specify the NginX version to download
+nginx_version="1.14.0"
+
+# Specify the PCRE version to download. Currently, NginX only supports PCRE1 (> 10)
+pcre_version="8.42"
+
+# Specify the ZLib version to download
+zlib_version="1.2.11"
+
+# Specify the OpenSSL version to download
+openssl_version="1.1.1-pre8"
+
+# Modify NginX configuration parameters.
+# Please note that - by default - the nginx user and group will be created.
+nginx_configuration="""
+--prefix=/etc/nginx
+--sbin-path=/usr/sbin/nginx
+--modules-path=/usr/lib64/nginx/modules
+--conf-path=/etc/nginx/nginx.conf
+--error-log-path=/var/log/nginx/error.log
+--http-log-path=/var/log/nginx/access.log
+--pid-path=/var/run/nginx.pid
+--lock-path=/var/run/nginx.lock
+--http-client-body-temp-path=/var/cache/nginx/client_temp
+--http-proxy-temp-path=/var/cache/nginx/proxy_temp
+--http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp
+--http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp
+--http-scgi-temp-path=/var/cache/nginx/scgi_temp
+--user=nginx
+--group=nginx
+"""
+
+# Modify the delivered NginX modules.
+# If you want to add custom 3rd party modules, get their absolute path and provide it via the '--add-module' flag
+# Example: --add-module=/home/me/my_nginx_module
+#
+# Please do not use the flags 'with-openssl', 'with-pcre' and 'with-zlib' as they are being set automatically.
+nginx_modules="""
+--with-http_ssl_module
+--with-http_addition_module
+--with-http_sub_module
+--with-http_dav_module
+--with-http_flv_module
+--with-http_mp4_module
+--with-http_gunzip_module
+--with-http_gzip_static_module
+--with-http_stub_status_module
+--with-threads
+--with-stream
+--with-stream_ssl_module
+--with-stream_ssl_preread_module
+--with-http_slice_module
+--with-mail
+--with-mail_ssl_module
+--with-compat
+--with-file-aio
+--with-http_v2_module
+--with-pcre-jit
+--with-http_realip_module
+--without-http_ssi_module
+--without-http_scgi_module
+--without-http_uwsgi_module
+--without-http_geo_module
+--without-http_autoindex_module
+--without-http_split_clients_module
+--without-http_memcached_module
+--without-http_empty_gif_module
+"""
