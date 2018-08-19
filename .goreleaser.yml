@@ -5,7 +5,6 @@ builds:
       - CGO_ENABLED=0
   - binary: secnginx
     goos:
-    - darwin
     - linux
     goarch:
     - amd64
@@ -14,9 +13,6 @@ builds:
     - arm64
     goarm:
     - 7
-    ignore:
-    - goos: darwin
-      goarch: 386
 
 archive:
   name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm
