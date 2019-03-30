@@ -1,5 +1,8 @@
 # SecNginX
 
+![GitHub](https://img.shields.io/github/license/phenomax/secnginx.svg)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/phenomax/secnginx.svg)
+
 **SecNginX** is a toolbox, which helps to:
 
 * Build the latest stable NginX with selected modules from source
