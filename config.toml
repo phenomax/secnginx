@@ -1,5 +1,5 @@
 # Specify the NginX version to download
-nginx_version="1.14.0"
+nginx_version="1.14.2"
 
 # Specify the PCRE version to download. Currently, NginX only supports PCRE1 (> 10)
 pcre_version="8.42"
@@ -8,7 +8,7 @@ pcre_version="8.42"
 zlib_version="1.2.11"
 
 # Specify the OpenSSL version to download
-openssl_version="1.1.1-pre8"
+openssl_version="1.1.1b"
 
 # Modify NginX configuration parameters.
 # Please note that - by default - the nginx user and group will be created.

@@ -114,7 +114,7 @@ func installRequiredPackages() {
 	log.Println("Installing dependencies via apt")
 
 	exec.Command("apt", "update").Run()
-	exec.Command("apt", "install", "-y", "build-essential", "cmake", "git", 
+	exec.Command("apt", "install", "-y", "build-essential", "cmake", "git",
 	"libpcre3-dev", "curl", "libcurl4-openssl-dev", "zlib1g-dev", "automake").Run()
 }
 

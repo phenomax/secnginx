@@ -3,7 +3,7 @@ project_name: secnginx
 builds:
   - env:
       - CGO_ENABLED=0
-  - binary: secnginx
+    binary: secnginx
     goos:
     - linux
     goarch:
@@ -15,9 +15,11 @@ builds:
     - 7
 
 archive:
-  name_template: '{{ .ProjectName }}_v{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm
-    }}v{{ .Arm }}{{ end }}'
-  format: tar.gz
+  name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
+  replacements:
+    linux: Linux
+    386: i386
+    amd64: x86_64
   files:
     - LICENSE
     - README.md
