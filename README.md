@@ -17,7 +17,7 @@ The aim of this project is to provide a fast solution to setup a secure, efficie
 
 * Download and extract the [lastest release](https://github.com/phenomax/secnginx/releases)
 * Make it executable `chmod +x secnginx`
-* Edit `config.toml` to your desires
+* Edit `config.toml` to your desires (especially check for the most recent [OpenSSL](https://www.openssl.org/source/) and [NginX](https://nginx.org/en/download.html) versions)
 * Start NginX installation `./secnginx install` - Check optional parameters with `./secnginx help install`
 
 ## Applied NginX Enhancements/Extensions (by default)
@@ -42,12 +42,15 @@ The aim of this project is to provide a fast solution to setup a secure, efficie
     * `./lego -a -m contact@example.com -d example.com --webroot /var/www/ --path /etc/nginx/ssl/rsa -k rsa4096  run` for an RSA4096 certificate
 
 * Submit your received certificates to various CT Logs using `secnginx submit-ct --input <path to public key> -output <path to output folder>`
+  * Please note that Let's Encrypt submits your certificates to some CT Logs by default.
 * Setup a [CAA](https://support.dnsimple.com/articles/caa-record/)-DNS Record
+* Create website specific [Content-Security-Policy](https://content-security-policy.com/) headers
 * Check the existing `ssl_basic.conf` settings (especially the headers!)
 * Check [Mozillas Web Security Guidelines](https://infosec.mozilla.org/guidelines/web_security)
 * Setup AAAA-DNS Records to use IPv6
 * Check your [Security Headers](https://securityheaders.io)
 * Check your overall SSL deployment: [SSL Labs](https://www.ssllabs.com/ssltest/)
+* Check the [Nginx Admin Handbook](https://github.com/trimstray/nginx-admins-handbook) for further hardening & best practices
 
 ## Setup TLSA/DANE
 
