@@ -1,5 +1,5 @@
 # Specify the NginX version to download
-nginx_version="1.17.1"
+nginx_version="1.16.0"
 
 # Specify the PCRE version to download. Currently, NginX only supports PCRE1 (> 10)
 pcre_version="8.42"
