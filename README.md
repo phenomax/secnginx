@@ -18,6 +18,7 @@ The aim of this project is to provide a fast solution to setup a secure, efficie
 * Download and extract the [lastest release](https://github.com/phenomax/secnginx/releases)
 * Make it executable `chmod +x secnginx`
 * Edit `config.toml` to your desires (especially check for the most recent [OpenSSL](https://www.openssl.org/source/) and [NginX](https://nginx.org/en/download.html) versions)
+* (Debian 10 only) Install `automake-1.16`: `wget https://ftp.gnu.org/gnu/automake/automake-1.16.tar.gz && tar xfvz automake-1.16.tar.gz && cd automake-1.16 && ./configure && make && make install`
 * Start NginX installation `./secnginx install` - Check optional parameters with `./secnginx help install`
 
 ## Applied NginX Enhancements/Extensions (by default)
